@@ -19,7 +19,7 @@ def getBalance(accNO):
 def dipowith(accNO, type):
     root = Toplevel()
     root.title(type+" ammount")
-    root.geometry("350x200")
+    root.geometry("350x200+150+150")
     amountVar=StringVar()
 
     def working():
@@ -34,7 +34,7 @@ def dipowith(accNO, type):
         }
         res=requests.put(url=url, data=json.dumps(data), headers=getHeaders())
         if res.status_code == 200:
-            messagebox.showinfo("Succsfull", f"Amount {type} Succesfully")
+            messagebox.showinfo("Succsfull", f"Amount {type}ed Succesfully")
             root.destroy()
         else:
             messagebox.showerror(str(res.status_code), res.text)
@@ -49,7 +49,7 @@ def dipowith(accNO, type):
 def transfer(accNO):
     root = Toplevel()
     root.title("Transfer Ammount")
-    root.geometry("350x200")
+    root.geometry("350x200+150+150")
     accountVar=StringVar()
     amountVar=StringVar()
 

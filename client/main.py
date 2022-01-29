@@ -9,7 +9,7 @@ from extras.services import setToken
 
 root = Tk()
 root.title("Code Lancer Bank")
-root.geometry('400x300')
+root.geometry('400x300+100+70')
 root.resizable(0,0)
 
 username = StringVar()

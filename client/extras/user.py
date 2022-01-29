@@ -18,7 +18,7 @@ def create_update(user={}, type="create"):
         emailvar.set(user["email"])
 
     root.title("create user")
-    root.geometry("350x200")
+    root.geometry("350x200+150+150")
     root.resizable(0,0)
         
     def creating_updating():
@@ -52,7 +52,7 @@ def create_update(user={}, type="create"):
     Entry(root, textvariable=namevar).grid(row=0, column=1, padx=20, pady=5)
     Label(root, text="Email").grid(row=1, column=0, padx=20, pady=10)
     Entry(root, textvariable=emailvar).grid(row=1, column=1, padx=20, pady=5)
-    Button(root,text="Create", command=creating_updating).grid(row=2, column=1, padx=10, pady=8)
+    Button(root,text=type, command=creating_updating).grid(row=2, column=1, padx=10, pady=8)
     
     root.mainloop()
 
@@ -90,6 +90,7 @@ def getAllUsers():
 
     root = Toplevel()
     root.title("All User")
+    root.geometry("700x450+150+150")
     root.resizable(0,0)
 
     tree = Treeview(root, show='headings')
@@ -101,9 +102,9 @@ def getAllUsers():
     tree.configure(yscrollcommand=scroll.set)
     tree["columns"] = ('1', '2', '3')
 
-    tree.column("1", width=100, minwidth=50, anchor=CENTER)
-    tree.column("2", width=100, minwidth=50, anchor=CENTER)
-    tree.column("3", width=100, minwidth=50, anchor=CENTER)
+    tree.column("1", width=200, minwidth=150, anchor=CENTER)
+    tree.column("2", width=200, minwidth=150, anchor=CENTER)
+    tree.column("3", width=200, minwidth=150, anchor=CENTER)
 
     tree.heading("1", text="Account No.")
     tree.heading("2", text="Name")
@@ -126,7 +127,7 @@ def allDetails(accNO):
 
     root=Toplevel()
     root.title("All Details")
-
+    root.geometry("350x200+150+150")
     root.resizable(0,0)
 
     temp=["name", "email", "accountNO", "balance"]

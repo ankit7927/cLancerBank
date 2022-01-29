@@ -22,7 +22,7 @@ def rightPanel(root):
     user=User()
     accountNO=StringVar()
     name=StringVar()
-    email=StringVar()
+    #email=StringVar()
 
     def searchUser():
         if accountNO.get()=="":
@@ -36,7 +36,7 @@ def rightPanel(root):
             user.setUser(json.loads(res.text))
 
             name.set(user.getUser()['name'])
-            email.set(user.getUser()['email'])
+            #email.set(user.getUser()['email'])
             #print(user.getUser()["transections"])
             detailFrame.pack(side=TOP, fill=BOTH, padx=15, pady=10)
             middelFrame.pack(side=TOP, fill=BOTH, padx=15, pady=10)
@@ -50,7 +50,7 @@ def rightPanel(root):
         user.setUser({})
         accountNO.set("")
         name.set("")
-        email.set("")
+        #email.set("")
         detailFrame.pack_forget()
         middelFrame.pack_forget()
         bottomFrame.pack_forget()
@@ -66,7 +66,7 @@ def rightPanel(root):
 
     detailFrame=LabelFrame(root, pady=8,padx=5, text="Customer Details")
     Label(detailFrame, textvariable=name).grid(row=0, column=0, padx=20)
-    Label(detailFrame, textvariable=email).grid(row=0, column=1, padx=20)
+    #Label(detailFrame, textvariable=email).grid(row=0, column=1, padx=20)
     Button(detailFrame, text="Show Details", command=lambda: allDetails(accountNO.get())).grid(row=0, column=2, padx=20)
     Button(detailFrame, text="Update Details", command=lambda: create_update(user.getUser(), "update")).grid(row=0, column=3, padx=20)
     Button(detailFrame, text="Remove User", command=lambda: remove_usr(user.getUser()["accountNO"])).grid(row=0, column=4, padx=20)
